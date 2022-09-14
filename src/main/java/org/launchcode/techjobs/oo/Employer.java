@@ -1,8 +1,9 @@
 package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
+import java.util.Random;
 
-public class Employer {
+public class Employer extends JobField {
 
     private int id;
     private static int nextId = 1;

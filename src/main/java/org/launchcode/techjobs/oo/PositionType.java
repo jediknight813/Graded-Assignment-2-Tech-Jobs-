@@ -1,6 +1,8 @@
 package org.launchcode.techjobs.oo;
 
-public class PositionType {
+import java.util.Objects;
+
+public class PositionType extends JobField {
 
     private int id;
     private static int nextId = 1;
@@ -17,6 +19,24 @@ public class PositionType {
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PositionType)) return false;
+
+        PositionType location = (PositionType) o;
+        return getId() == location.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
     //  their id fields match.
